@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Placement Portal</title>
+<link rel="stylesheet" href="css/StyleCSS.css">
+<link rel="shortcut icon" type="image/png" href="image/logo.png" sizes="32x32"/>
+
+<style>
+body {
+	background-image: url("image/loginbackground.jpg");
+}
+ span{
+	color: red;
+	} 
+ 
+</style>
+</head>
+<body>
+<script type="text/javascript" src="js/loginvalidation.js"></script>
+
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+		<form action="StudentLoginServlet" method="post" onsubmit=" return loginValidation()" >
+			<div id="Sign-In" class="sign-in-htm">
+				<div class="group">
+							<span id="userspan"></span>
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input" name="username" onchange="onUserCheck()">
+						
+					
+				</div>
+				<div class="group">
+				<span id="passspan"></span>
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" name="password" onchange="onUserCheck()" required>				
+				</div>
+				<br><br><br>
+				<div class="group">
+					<!-- <a href="homepage.html"> --><input type="submit" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>
+			</div>
+		</form>
+		<form action="StudentRegistrationServlet" method="post" onsubmit=" return registerValidation()" >
+			<div class="sign-up-htm">
+				<div class="group">
+				<span id="userspan1"></span>
+					<label for="user" class="label">Username</label>
+					<input id="user1" type="text" class="input" name="username" onchange="onUserCheck()" required >
+				</div>
+				<div class="group">
+				<span id="passspan1"></span>
+					<label for="pass" class="label">Password</label>
+					<input id="pass1" type="password" class="input" name="password" data-type="password" onchange="onUserCheck()" required>
+				</div>
+				<div class="group">
+				<span id="repassspan"></span>
+					<label for="pass" class="label">Confirm Password</label>
+					<input id="repass" type="password" class="input" name="repassword" data-type="password" onchange="onUserCheck()" required >
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="email" type="email" class="input" name="email" >
+				</div>
+				<div class="group">
+					<a href="#Sign-In"><input type="submit" class="button" value="Sign Up"></a>
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<label for="tab-1">Already Member?</label>
+				</div>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
